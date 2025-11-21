@@ -90,7 +90,7 @@ export default function ProductsList() {
           </div>
         )}
         <div className="mt-4">
-          <Link to="*" className="btn btn-dark">Go to Home</Link>
+          <Link to="/" className="btn btn-dark">Go to Home</Link>
         </div>
       </section>
     </>

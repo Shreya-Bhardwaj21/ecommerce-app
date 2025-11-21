@@ -16,7 +16,7 @@ export default function Contact() {
                         <li class="list-group-item fw-bold">email:- shreya483@gmail.com</li>
                     </ul>
                     <div className="mt-4">
-                        <Link to="*" className="btn btn-dark">Go to Home</Link>
+                        <Link to="/" className="btn btn-dark">Go to Home</Link>
                     </div>
                 </div>
             </section>

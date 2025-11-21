@@ -14,19 +14,21 @@ export default function App() {
 
   return (
     <> 
-    <BrowserRouter>
+    <BrowserRouter basename="/ecommerce-app/">
     <Navbar/>
     <Routes>
-      <Route path='*' element={<Home/>} />
+      <Route path='/' element={<Home/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/contact' element={<Contact/>} />
       <Route path='/productsList' element={<ProductsList/>} />
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/product/:id' element={<ProductDetails/>} />  
+      <Route path="*" element={<Home />} />
     </Routes>
     </BrowserRouter>
     </>
   );
 }
+
 
 
