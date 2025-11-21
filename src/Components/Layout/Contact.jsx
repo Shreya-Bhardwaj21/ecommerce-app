@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
 
@@ -14,6 +15,9 @@ export default function Contact() {
                         <li class="list-group-item fw-bold">contact:- 8092217495</li>
                         <li class="list-group-item fw-bold">email:- shreya483@gmail.com</li>
                     </ul>
+                    <div className="mt-4">
+                        <Link to="*" className="btn btn-dark">Go to Home</Link>
+                    </div>
                 </div>
             </section>
         </>

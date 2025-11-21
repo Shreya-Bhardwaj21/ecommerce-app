@@ -3,15 +3,22 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-
   base: '/ecommerce-app/',
   plugins: [react()],
-  
-  // 👈 ADD THIS 'server' BLOCK
+
+  // Fix HMR/live reload on Windows
   server: {
-    // This often fixes HMR/live reload issues on Windows/WSL
     watch: {
       usePolling: true,
+    },
+  },
+
+  // Fix refresh/404 issue on GitHub Pages
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
     },
   },
 })

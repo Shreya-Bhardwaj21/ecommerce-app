@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function About() {
 
@@ -13,7 +14,10 @@ export default function About() {
                         <li className="list-group-item fw-bold">website:- MyShoppingSite</li>
                         <li className="list-group-item fw-bold">Build :- React and javascript</li>
                     </ul>
-        </div>
+                    <div className="mt-4">
+                        <Link to="*" className="btn btn-dark">Go to Home</Link>
+                    </div>
+                </div>
             </section>
         </>
     );

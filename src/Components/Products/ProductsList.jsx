@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Product from "./Product";
 import Loder from "./Loder";
 import "./Product.css";
@@ -7,20 +8,20 @@ export default function ProductsList() {
   let [item, setItem] = useState([])
   let [allItem, setAllItem] = useState([]);
   let [isLoading, setIsLoading] = useState(false);
-  let[searchitem, setSearchitem] = useState('');
+  let [searchitem, setSearchitem] = useState('');
   useEffect(() => {
     datafetch();
   }, []);
 
   function searchproduct(e) {
-  e.preventDefault();
-  let filtered = allItem.filter((product) =>
-    product.title.toLowerCase().includes(searchitem.toLowerCase())
-  );
+    e.preventDefault();
+    let filtered = allItem.filter((product) =>
+      product.title.toLowerCase().includes(searchitem.toLowerCase())
+    );
 
-  setItem(filtered);
-  setSearchitem('')
-}
+    setItem(filtered);
+    setSearchitem('')
+  }
 
   async function datafetch() {
     try {
@@ -65,7 +66,7 @@ export default function ProductsList() {
               <div className="col-4">
                 <form onSubmit={searchproduct}>
                   <div className="input-group">
-                    <input type="text" placeholder="search here" className="form-control" value={searchitem} onChange={(e)=>setSearchitem(e.target.value)} />
+                    <input type="text" placeholder="search here" className="form-control" value={searchitem} onChange={(e) => setSearchitem(e.target.value)} />
                     <button className="btn btn-dark" type="submit">search</button>
                   </div>
                 </form>
@@ -88,6 +89,9 @@ export default function ProductsList() {
               ))}
           </div>
         )}
+        <div className="mt-4">
+          <Link to="*" className="btn btn-dark">Go to Home</Link>
+        </div>
       </section>
     </>
   );
